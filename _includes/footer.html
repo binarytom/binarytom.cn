@@ -1,5 +1,58 @@
-<footer>
-  <span>
-    &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
-  </span>
+<footer class="footer">
+	{% if page.olives %}
+		<p><a href="http://www.flaticon.com/free-icon/olive-branches-award-symbol_47904">
+		Olive branches award symbol</a> by
+		<a href="http://www.flaticon.com/authors/freepik">Freepik</a>
+		is licensed under
+		<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
+		</p>
+	{% endif %}
+	<!--
+	<p>
+		<a href="binarytom.ssh.pub">
+			<abbr title="">....&hellip;</abbr>
+			(SSH)
+		</a>
+		&ndash;
+		<a href="binarytom.pgp.asc">
+			<abbr title="">0x4A34220B</abbr>
+			(PGP)
+		</a>
+		<br />
+		<a href="bitcoin:xxxx">
+			xxx (BTC)
+		</a>
+	</p>
+	-->
+	<!--
+	<p>Subscribe to blog <a href="feed.xml">via RSS</a></p>
+	-->
+	<p>Icons by <a href="https://simpleicons.org/">Simple Icons</a></p>
 </footer>
+
+<div class="hidden" itemscope itemtype="http://schema.org/Person">
+	<span itemprop="gender">Male</span>
+	<span itemprop="email">lieh_666@foxmail.com</span>
+	<span itemprop="name">lienhe</span>
+	<span itemprop="birthDate">1995-06-08</span>
+	<span itemprop="jobTitle">Software Engineer</span>
+	<span itemprop="nationality">NO</span>
+	<span itemprop="telephone">+8618641714160</span>
+	<div itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+		<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+			<span itemprop="streetAddress"></span>
+			<span itemprop="addressLocality"></span>,
+			<span itemprop="addressRegion"></span>,
+			<span itemprop="addressCountry"></span>,
+			<span itemprop="postalCode">000000</span>
+		</div>
+	</div>
+	<div itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+		<a itemprop="url" href="https://www.sau.edu.cn/">
+			<span title="Shenyang Aerospace University" itemprop="name">SAU</span>
+		</a>
+	</div>
+	<a href="https://binarytom.cn" itemprop="url">Portfolio</a>
+	<a href="https://binarytom.cn/blog" itemprop="url">Blog</a>
+</div>
+<script src="js/hyphenate.js" async></script>

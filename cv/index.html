@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Bitter' />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+  <body>
+    <div class="resume">
+      <h1 class="name">
+        <span class="first-name">Li</span>
+        <span class="last-name">Enhe</span>
+        <span class="headline"></span>
+      </h1>
+
+      <div class="section contact">
+        <h2 class="section-header">Contact</h2>
+        <div class="content">
+
+          <div class="phone-number phone-mobile">
+            <span class="label"></span>
+            <span class="content"></span>
+          </div>
+
+          <div class="email-address">
+            <span class="label">Email</span>
+            <span class="content"><a href="mailto:lieh_666@foxmail.com">lieh_666@foxmail.com</a></span>
+          </div>
+
+          <div class="member-url-resource url-portfolio">
+            <span class="label">Portfolio</span>
+            <span class="content"><a href="https://binarytom.cn" target="_blank">binarytom.cn</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section educations listing">
+        <h2 class="section-header">Education</h2>
+        <div class="content">
+          <div class="education">
+            <div class="listing-title">Shenyang Area Space University</div>
+            <div class="dates">
+              <span class="start-year">2013</span>
+              <span class="date-separator">-</span>
+              <span class="end-year">2017</span>
+            </div>
+            <span class="listing-type">Bachelor of IT, Computer Science</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section positions listing">
+        <h2 class="section-header">Professional experience</h2>
+        <div class="content">
+          <div class="position first">
+            <div class="listing-title">XiaoMi</div>
+
+            <div class="dates">
+              <span class="start-month">August</span>
+              <span class="start-year">2019</span>
+              <span class="date-separator">-</span>
+              <span class="is-current">Present</span>
+            </div>
+
+            <div class="listing-type">Software Development Engineer</div>
+
+            <div class="listing-description"><p>work description</p></div>
+          </div>
+          <div class="position">
+            <div class="listing-title">Sf-express</div>
+
+            <div class="dates">
+              <span class="start-month">June</span>
+              <span class="start-year">2018</span>
+              <span class="date-separator">-</span>
+              <span class="end-month">June</span>
+              <span class="end-year">2019</span>
+            </div>
+
+            <div class="listing-type">Software Engineer</div>
+
+            <div class="listing-description"><p></p></div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      <div class="section hobbies">
+        <h2 class="section-header">Hobbies</h2>
+        <div class="content">
+          <ul class="hobbies-list">
+            <li class="hobby">Board Games</li>
+            <li class="hobby">Open Source</li>
+            <li class="hobby">Bick Riding</li>
+          </ul>
+        </div>
+      </div>
+      -->
+
+    </div>
+    <script>
+      var listings = document.getElementsByClassName('listing-title');
+      var ptitle = "";
+      var pgroup = 0;
+      for (var i = 0; i < listings.length+1; i++) {
+        var t = (i === listings.length ? "" : listings.item(i).textContent);
+        if (t.indexOf('First in Class') === 0) {
+          t = "First in Class";
+        }
+
+        if (t == ptitle && t.indexOf('MIT Teaching') === -1) {
+          listings.item(i-1).parentNode.style.display = 'none';
+          pgroup++;
+        } else {
+          if (pgroup) {
+            listings.item(i-1).parentNode.className += " grouped";
+            var dates = listings.item(i-1).parentNode.getElementsByClassName('dates').item(0);
+            var cnt = document.createElement('div');
+            cnt.className = "dates count";
+            cnt.textContent = "(" + pgroup + " times)";
+            dates.parentNode.insertBefore(cnt, dates);
+            console.log(ptitle, pgroup, cnt);
+          }
+
+          ptitle = t;
+          pgroup = 0;
+        }
+      }
+
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains("dates") &&
+            e.target.classList.contains("count")) {
+          var el = e.target.parentNode.previousSibling;
+          e.target.parentNode.classList.remove('grouped');
+          e.target.parentNode.removeChild(e.target);
+          while (true) {
+            while (el && el.nodeType != 1) {
+              el = el.previousSibling
+            }
+
+            if (!el || el.style.display != "none") {
+              break;
+            }
+
+            el.style.display = "block";
+            el = el.previousSibling
+          }
+        }
+      }, false);
+    </script>
+  </body>
+</html>

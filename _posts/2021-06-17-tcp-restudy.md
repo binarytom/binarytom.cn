@@ -2,7 +2,7 @@
 layout: post
 title: "TCP学习"
 author: "BinaryTom"
-tags: Tale
+tags: computer, net, tcp
 ---
 
 TCP（传输控制协议，Transmission Control Protocol）是一种端到端的、面向连接、可靠的传输层协议。在实现上基于ip协议，一个通过网络数据报（internet datagram）接收/发送数据的协议。在此基础上，TCP主要提供了如下的几个能力：
