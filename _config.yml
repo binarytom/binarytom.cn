@@ -8,4 +8,4 @@ include: []
 kramdown:
   input: GFM
   hard_wrap: false
-#repository: binarytom/binarytom.cn
+repository: binarytom/binarytom.cn
