@@ -86,5 +86,7 @@ LSM树是有别与B+树的存储查询设计，选择了面向更大的写吞吐
 ## 参考
 
 [wiki](https://en.wikipedia.org/wiki/Log-structured_merge-tree)
+
 [LSM Compaction Strategy](https://www.jianshu.com/p/8de55d5df05e)
+
 [LSM树详解](https://zhuanlan.zhihu.com/p/181498475)
