@@ -5,8 +5,6 @@ author: "BinaryTom"
 tags: computer, storage, lsm
 ---
 
-# LSM-TREE
-
 LSM-TREE(Log-structured Merge Tree)是一种利用磁盘特性，显著提升写吞吐量的存储查询结构。主要是利用了磁盘在顺序访问的效率远高于随机访问的效率，通过设计的分层存储的方式和WAL（Write-ahead logging），达到增大写吞吐量的目的。对于随机的索引，也能有很高的吞吐量。
 
 ## 和B+树的对比
